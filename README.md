@@ -1,3 +1,3 @@
-# ReactToDoList
-
-Todo list inicial created from
+# Full Modern React Tutorial
+> by The net ninja
+https://github.com/iamshaunjp/Complete-React-Tutorial

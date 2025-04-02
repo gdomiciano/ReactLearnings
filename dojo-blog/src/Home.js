@@ -3,7 +3,7 @@ import BlogList from './BlogList';
 
 const Home = () => {
   const [blogs, setBlogs] = useState(null)
-
+  const [isPending, setIsPending] = useState(true)
   useEffect(() => {
     console.log('useEffect ran', blogs)
     fetch('http://localhost:8000/blogs')
@@ -12,11 +12,13 @@ const Home = () => {
       })
       .then(data => {
         setBlogs(data)
+        setIsPending(false)
       })
   }, []);
 
   return (
     <section className="home">
+      { isPending && <div>Loading...</div> }
       {blogs && <BlogList blogs={blogs} title="All Blogs"/>}
     </section>
    );

@@ -8,9 +8,14 @@ const Home = () => {
     { title: 'Web dev top tips', body: 'lorem ipsum...', author: 'mario', id: 3 }
   ])
 
+  const handleDelete = (id) => {
+    const newBlogs = blogs.gilter(blog => blog.id !== id);
+    setBlogs(newBlogs);
+  }
+
   return (
     <section className="home">
-      <BlogList blogs={blogs} title="All Blogs"/>
+      <BlogList blogs={blogs} handleDelete={handleDelete} title="All Blogs"/>
       <BlogList blogs={blogs.filter((blog) => blog.author === 'mario' )} title="Mario's Blogs"/>
     </section>
    );

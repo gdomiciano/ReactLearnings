@@ -1,6 +1,6 @@
 import Navbar from './Navbar';
 import Home from './Home';
-
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 function App() {
 
   const title  = 'Welcome to the new blog';
@@ -9,12 +9,18 @@ function App() {
   const url = 'https://www.google.com'
 
   return (
-    <div className="App">
-      <Navbar />
-      <main className="content">
-        <Home />
-      </main>
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <main className="content">
+          <Switch>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+        </main>
+      </div>
+    </Router>
   );
 }
 

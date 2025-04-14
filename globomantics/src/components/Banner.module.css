@@ -1,0 +1,11 @@
+.logo {
+  width: 128px;
+  height: 128px;
+  cursor: pointer
+}
+
+.subtitle {
+  font-size: xx-large;
+  color: coral;
+  line-height: 128px;
+}
